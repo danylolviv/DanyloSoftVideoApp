@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DanyloSoft.VideoApplication.Core\DanyloSoft.VideoApplication.Core.csproj" />
+      <ProjectReference Include="..\DanyloSoft.VideoApplication.Domain\DanyloSoft.VideoApplication.Domain.csproj" />
+    </ItemGroup>
+
+</Project>
