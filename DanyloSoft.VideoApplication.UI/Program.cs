@@ -1,4 +1,9 @@
 ﻿using System;
+using DanyloSoft.VideoApplication.Core.IServices;
+using DanyloSoft.VideoApplication.Domain.IRepositories;
+using DanyloSoft.VideoApplication.Domain.Services;
+using DanyloSoft.VideoApplication.Infrastructure.DataAccess.Repositories;
+using DanyloSoft.VideoApplication.SQL.Repositories;
 
 namespace ConsoleVideoLibraryApplication
 {
@@ -6,7 +11,9 @@ namespace ConsoleVideoLibraryApplication
     {
         static void Main(string[] args)
         {
-            var menu = new MainMenu();
+            IVideoRepository repo = new VideoRepository();
+            IVideoService service = new VideoService(repo);
+            var menu = new MainMenu(service);
             menu.Start();
         }
     }

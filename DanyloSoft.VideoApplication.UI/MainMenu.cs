@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using DanyloSoft.VideoApplication.Core.IServices;
 using DanyloSoft.VideoApplication.Core.Models;
-using VideoLibraryModels;
-using VideoLibraryBLL;
 
 namespace ConsoleVideoLibraryApplication
 {
@@ -101,7 +99,7 @@ namespace ConsoleVideoLibraryApplication
         {
             List<Video> searchResult = new List<Video>();
             
-            foreach (var video in _videoManager.GetListVideos())
+            foreach (var video in _service.GetListVideos())
             {
                 if (video.Id == id)
                 {
@@ -112,7 +110,7 @@ namespace ConsoleVideoLibraryApplication
         }
         private void SearchByQuery(string searchQuery)
         {
-            foreach (var video in _videoManager.GetListVideos())
+            foreach (var video in _service.GetListVideos())
             {
                 if (video.VideoTittle.ToLower().Contains(searchQuery.ToLower()))
                 {
@@ -141,14 +139,14 @@ namespace ConsoleVideoLibraryApplication
         {
             Print(StringConstants.EditVideosGreeting);
             Print("");
-            foreach (var video in _videoManager.GetListVideos())
+            foreach (var video in _service.GetListVideos())
             {
                 Print($"Title: {video.VideoTittle}  Storyline: {video.VideoStoryline}  Id: {video.Id}");
             }
             int chosenId = VideoIdSelection();
             while (chosenId != 0)
             {
-                foreach (var video in _videoManager.GetListVideos().ToList())
+                foreach (var video in _service.GetListVideos().ToList())
                 {
                     if (video.Id == chosenId)
                     {
@@ -174,7 +172,7 @@ namespace ConsoleVideoLibraryApplication
                         if (int.TryParse(Console.ReadLine(),out int inputSave))
                         {
                             Print(StringConstants.SuccessfulUpdate);
-                            _videoManager.UpdateVideo(newVideo);
+                            _service.UpdateVideo(newVideo);
                         }
                         chosenId = 0;
                     }
@@ -192,18 +190,18 @@ namespace ConsoleVideoLibraryApplication
         {
             Print(StringConstants.DeleteSelectedVideoGreeting);
             Print("");
-            foreach (var video in _videoManager.GetListVideos())
+            foreach (var video in _service.GetListVideos())
             {
                 Print($"Title: {video.VideoTittle}  Storyline: {video.VideoStoryline}  Id: {video.Id}");
             }
             int chosenId = VideoIdSelection();
             while (chosenId != 0)
             {
-                foreach (var video in _videoManager.GetListVideos().ToList())
+                foreach (var video in _service.GetListVideos().ToList())
                 {
                     if (video.Id == chosenId)
                     {
-                        _videoManager.DeleteVideo(video);
+                        _service.DeleteVideo(video);
                         chosenId = 0;
                     }
                 }
@@ -231,7 +229,7 @@ namespace ConsoleVideoLibraryApplication
         private void SeeMovieList()
         {
             Print(StringConstants.AllMOviesGreeting);
-            foreach (var video in _videoManager.GetListVideos())
+            foreach (var video in _service.GetListVideos())
             {
                 Print($"Title: {video.VideoTittle}  Storyline: {video.VideoStoryline}  Id: {video.Id}");
             }
@@ -249,7 +247,7 @@ namespace ConsoleVideoLibraryApplication
             //Call Service
             var video = new Video {VideoTittle = videoTitle, VideoStoryline = videoStoryLine};
             
-            video = _videoManager.CreateVideo(video);
+            video = _service.CreateVideo(video);
             Print($"Video With Following Properties Created - Id: {video.Id} Title: {video.VideoTittle} StoryLine: {video.VideoStoryline}");
             NextActionMainMenu();
         }

@@ -2,14 +2,11 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <OutputType>Exe</OutputType>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\DanyloSoft.VideoApplication.Core\DanyloSoft.VideoApplication.Core.csproj" />
       <ProjectReference Include="..\DanyloSoft.VideoApplication.Domain\DanyloSoft.VideoApplication.Domain.csproj" />
-      <ProjectReference Include="..\DanyloSoft.VideoApplication.Infrastructure.DataAccess\DanyloSoft.VideoApplication.Infrastructure.DataAccess.csproj" />
-      <ProjectReference Include="..\DanyloSoft.VideoApplication.SQL\DanyloSoft.VideoApplication.SQL.csproj" />
     </ItemGroup>
 
 </Project>

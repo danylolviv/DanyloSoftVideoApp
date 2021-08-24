@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using DanyloSoft.VideoApplication.Core.IServices;
 using DanyloSoft.VideoApplication.Core.Models;
 using DanyloSoft.VideoApplication.Domain.IRepositories;
@@ -12,9 +13,25 @@ namespace DanyloSoft.VideoApplication.Domain.Services
         {
             _repo = repo;
         }
-        public Video Create(Video video)
+
+        public Video CreateVideo(Video newVideo)
         {
-            return _repo.Add(video);
+            return _repo.CreateVideo(newVideo);
+        }
+
+        public void DeleteVideo(Video videoToDelete)
+        {
+            _repo.DeleteVideo(videoToDelete);
+        }
+
+        public List<Video> GetListVideos()
+        {
+            return _repo.GetListVideos();
+        }
+
+        public void UpdateVideo(Video newVideo)
+        {
+            _repo.UpdateVideo(newVideo);
         }
     }
 }
