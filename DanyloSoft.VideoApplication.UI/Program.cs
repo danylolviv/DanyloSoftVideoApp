@@ -11,7 +11,7 @@ namespace ConsoleVideoLibraryApplication
     {
         static void Main(string[] args)
         {
-            IVideoRepository repo = new VideoRepository();
+            IVideoRepository repo = new VideoRepositoryInMemory();
             IVideoService service = new VideoService(repo);
             var menu = new MainMenu(service);
             menu.Start();

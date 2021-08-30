@@ -14,14 +14,14 @@ namespace DanyloSoft.VideoApplication.Infrastructure.DataAccess.Repositories
         }
         
         private static List<Video> _listOfVideos = new List<Video>();
-        private static int _runningID = 4;
+        private static int _runningID = 1;
         
         private void PopulateDB()
         {
-            _listOfVideos.Add(new Video{Id = 1, VideoTittle = "Django free", VideoStoryline = "A whole lot of Tarrantino kills"});
-            _listOfVideos.Add(new Video{Id = 2, VideoTittle = "2012", VideoStoryline = "World colapses"});
-            _listOfVideos.Add(new Video{Id = 3, VideoTittle = "Once upon in a Hollywood", VideoStoryline = "Brad Pitt and Leo smashing the actor game"});
-            _listOfVideos.Add(new Video{Id = 4, VideoTittle = "House of CArds", VideoStoryline = "Corrupt us gov. system."});
+            CreateVideo(new Video{VideoTittle = "Django free", VideoStoryline = "A whole lot of Tarrantino kills"});
+            CreateVideo(new Video{ VideoTittle = "2012", VideoStoryline = "World colapses"});
+            CreateVideo(new Video{ VideoTittle = "Once upon in a Hollywood", VideoStoryline = "Brad Pitt and Leo smashing the actor game"});
+            CreateVideo(new Video{ VideoTittle = "House of CArds", VideoStoryline = "Corrupt us gov. system."});
         }
 
         public Video CreateVideo(Video newVideo)

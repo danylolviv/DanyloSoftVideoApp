@@ -6,6 +6,7 @@ using DanyloSoft.VideoApplication.Core.Models;
 
 namespace ConsoleVideoLibraryApplication
 {
+    
     public class MainMenu
     {
         private IVideoService _service;
@@ -13,6 +14,7 @@ namespace ConsoleVideoLibraryApplication
         public MainMenu(IVideoService service)
         {
             _service = service;
+            Console.WriteLine("Test");
         }
         public void Start()
         {
