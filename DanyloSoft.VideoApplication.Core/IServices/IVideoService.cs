@@ -8,11 +8,12 @@ namespace DanyloSoft.VideoApplication.Core.IServices
         //POST request
         Video CreateVideo(Video newVideo);
         //DELETE request
-        void DeleteVideo(Video videoToDelete);
+        Video DeleteVideo(Video videoToDelete);
         // GET request
         List<Video> GetListVideos();
         //PUT request
         Video UpdateVideo(Video newVideo);
 
+        Video GetVideoById(int id);
     }
 }

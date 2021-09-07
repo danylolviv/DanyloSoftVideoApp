@@ -10,7 +10,11 @@ namespace DanyloSoft.VideoApplication.Infrastructure.DataAccess.Repositories
     {
         public VideoRepositoryInMemory()
         {
-            PopulateDB();
+            if (_listOfVideos.Count <= 0)
+            {
+                PopulateDB();
+            }
+            
         }
         
         private static List<Video> _listOfVideos = new List<Video>();
@@ -51,12 +55,15 @@ namespace DanyloSoft.VideoApplication.Infrastructure.DataAccess.Repositories
             return newVideo;
         }
 
-        public void DeleteVideo(Video videoToDelete)
+        public Video DeleteVideo(Video videoToDelete)
         {
+            var vid = FindById(videoToDelete.Id);
             if (videoToDelete != null)
             {
-                _listOfVideos.Remove(videoToDelete);    
+                _listOfVideos.Remove(vid);
+                return vid;
             }
+            return null;
         }
 
         public Video FindById(int id)

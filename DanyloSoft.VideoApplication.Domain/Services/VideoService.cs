@@ -19,9 +19,9 @@ namespace DanyloSoft.VideoApplication.Domain.Services
             return _repo.CreateVideo(newVideo);
         }
 
-        public void DeleteVideo(Video videoToDelete)
+        public Video DeleteVideo(Video videoToDelete)
         {
-            _repo.DeleteVideo(videoToDelete);
+            return _repo.DeleteVideo(videoToDelete);
         }
 
         public List<Video> GetListVideos()
@@ -32,6 +32,11 @@ namespace DanyloSoft.VideoApplication.Domain.Services
         public Video UpdateVideo(Video newVideo)
         {
             return _repo.UpdateVideo(newVideo);
+        }
+
+        public Video GetVideoById(int id)
+        {
+            return _repo.FindById(id);
         }
     }
 }

@@ -22,9 +22,10 @@ namespace DanyloSoft.VideoApplication.SQL.Repositories
             throw new System.NotImplementedException();
         }
 
-        public void DeleteVideo(Video videoToDelete)
+        public Video DeleteVideo(Video videoToDelete)
         {
             throw new System.NotImplementedException();
+            return null;
         }
 
         public List<Video> GetListVideos()

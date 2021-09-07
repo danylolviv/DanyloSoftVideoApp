@@ -7,7 +7,7 @@ namespace DanyloSoft.VideoApplication.Domain.IRepositories
     {
         Video CreateVideo(Video newVideo);
 
-        void DeleteVideo(Video videoToDelete);
+        Video DeleteVideo(Video videoToDelete);
 
         List<Video> GetListVideos();
 
