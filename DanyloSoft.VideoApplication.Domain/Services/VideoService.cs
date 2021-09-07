@@ -29,9 +29,9 @@ namespace DanyloSoft.VideoApplication.Domain.Services
             return _repo.GetListVideos();
         }
 
-        public void UpdateVideo(Video newVideo)
+        public Video UpdateVideo(Video newVideo)
         {
-            _repo.UpdateVideo(newVideo);
+            return _repo.UpdateVideo(newVideo);
         }
     }
 }

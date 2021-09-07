@@ -14,7 +14,6 @@ namespace ConsoleVideoLibraryApplication
         public MainMenu(IVideoService service)
         {
             _service = service;
-            Console.WriteLine("Test");
         }
         public void Start()
         {

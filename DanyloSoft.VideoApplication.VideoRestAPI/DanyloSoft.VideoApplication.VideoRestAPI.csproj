@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DanyloSoft.VideoApplication.Core\DanyloSoft.VideoApplication.Core.csproj" />
+      <ProjectReference Include="..\DanyloSoft.VideoApplication.Domain\DanyloSoft.VideoApplication.Domain.csproj" />
+      <ProjectReference Include="..\DanyloSoft.VideoApplication.Infrastructure.DataAccess\DanyloSoft.VideoApplication.Infrastructure.DataAccess.csproj" />
+    </ItemGroup>
+
+</Project>

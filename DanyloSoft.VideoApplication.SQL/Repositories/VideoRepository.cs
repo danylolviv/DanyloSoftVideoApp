@@ -37,7 +37,7 @@ namespace DanyloSoft.VideoApplication.SQL.Repositories
             return listOfVideos;
         }
 
-        public void UpdateVideo(Video newVideo)
+        public Video UpdateVideo(Video newVideo)
         {
             throw new System.NotImplementedException();
         }

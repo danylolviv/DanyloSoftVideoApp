@@ -37,7 +37,7 @@ namespace DanyloSoft.VideoApplication.Infrastructure.DataAccess.Repositories
             return _listOfVideos;
         }
 
-        public void UpdateVideo(Video newVideo)
+        public Video UpdateVideo(Video newVideo)
         {
             Video videoToUpdate = FindById(newVideo.Id);
             if (videoToUpdate != null)
@@ -47,6 +47,8 @@ namespace DanyloSoft.VideoApplication.Infrastructure.DataAccess.Repositories
                 videoToUpdate.ReleaseDate = newVideo.ReleaseDate;
                 videoToUpdate.Id = newVideo.Id;    
             }
+
+            return newVideo;
         }
 
         public void DeleteVideo(Video videoToDelete)

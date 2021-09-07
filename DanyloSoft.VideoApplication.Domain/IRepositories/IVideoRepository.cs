@@ -11,7 +11,7 @@ namespace DanyloSoft.VideoApplication.Domain.IRepositories
 
         List<Video> GetListVideos();
 
-        void UpdateVideo(Video newVideo);
+        Video UpdateVideo(Video newVideo);
 
         Video FindById(int id);
     }

@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanyloSoft.VideoApplication
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanyloSoft.VideoApplication.SQL", "DanyloSoft.VideoApplication.SQL\DanyloSoft.VideoApplication.SQL.csproj", "{6678F473-47E9-4AF4-9A46-068DE962C1E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanyloSoft.VideoApplication.VideoRestAPI", "DanyloSoft.VideoApplication.VideoRestAPI\DanyloSoft.VideoApplication.VideoRestAPI.csproj", "{AB1D493F-9D4E-4D9E-BEF4-E1DFF61A40CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{6678F473-47E9-4AF4-9A46-068DE962C1E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6678F473-47E9-4AF4-9A46-068DE962C1E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6678F473-47E9-4AF4-9A46-068DE962C1E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB1D493F-9D4E-4D9E-BEF4-E1DFF61A40CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB1D493F-9D4E-4D9E-BEF4-E1DFF61A40CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB1D493F-9D4E-4D9E-BEF4-E1DFF61A40CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB1D493F-9D4E-4D9E-BEF4-E1DFF61A40CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2B05E72F-EE03-4ED1-AFC9-214D7ADCF68C} = {381A5A21-600F-4161-849C-058508A98FFA}
@@ -72,5 +78,6 @@ Global
 		{7B85BC54-61EC-4309-BC41-6EA2590B392C} = {73B050C2-1776-4B32-BDCD-7F8E604BF69B}
 		{5C4BC387-062A-4DFC-9A49-90C4B978B29D} = {EA666BB2-BB21-49EC-9A68-4C233E6E07AE}
 		{6678F473-47E9-4AF4-9A46-068DE962C1E8} = {2E898B24-9EF7-49C0-AA14-54582D8A9467}
+		{AB1D493F-9D4E-4D9E-BEF4-E1DFF61A40CD} = {EA666BB2-BB21-49EC-9A68-4C233E6E07AE}
 	EndGlobalSection
 EndGlobal

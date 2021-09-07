@@ -4,6 +4,7 @@ using DanyloSoft.VideoApplication.Domain.IRepositories;
 using DanyloSoft.VideoApplication.Domain.Services;
 using DanyloSoft.VideoApplication.Infrastructure.DataAccess.Repositories;
 using DanyloSoft.VideoApplication.SQL.Repositories;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ConsoleVideoLibraryApplication
 {
@@ -11,10 +12,15 @@ namespace ConsoleVideoLibraryApplication
     {
         static void Main(string[] args)
         {
-            IVideoRepository repo = new VideoRepositoryInMemory();
-            IVideoService service = new VideoService(repo);
-            var menu = new MainMenu(service);
-            menu.Start();
+            ServiceCollection serviceCollection = new ServiceCollection();
+            serviceCollection.AddScoped<IVideoRepository, VideoRepositoryInMemory>();
+            serviceCollection.AddScoped<IVideoService, VideoService>();
+
+            var serviceProvider = serviceCollection.BuildServiceProvider();
+
+            var mainMenu = new MainMenu(serviceProvider.GetRequiredService<IVideoService>());
+
+            mainMenu.Start();
         }
     }
 }
