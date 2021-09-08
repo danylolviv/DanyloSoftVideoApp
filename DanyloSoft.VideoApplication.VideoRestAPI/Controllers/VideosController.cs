@@ -37,10 +37,10 @@ namespace DanyloSoft.VideoApplication.VideoRestAPI.Controllers
       {
         return BadRequest("First name is required for creating new vid");
       }
-
-      return StatusCode(550, "Who gut you smiling like this");
-      //return _videoservice.CreateVideo(newVideo);
+      return _videoservice.CreateVideo(newVideo);
     }
+    
+    
     //PUT
     [HttpPut ("{id}")]
     public ActionResult<Video> UpdateVideo(int id, Video updatedVideo)
@@ -51,6 +51,8 @@ namespace DanyloSoft.VideoApplication.VideoRestAPI.Controllers
       }
       return _videoservice.UpdateVideo(updatedVideo);
     }
+    
+    
     //DELETE
     [HttpDelete("{id}")]
     public ActionResult<Video> DeleteVideo(int id, Video videoToDelete)
